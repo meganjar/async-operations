@@ -19,10 +19,11 @@ export async function favourite(imgId) {
 
 // Step 1
 async function initialLoad() {
-  const response = await fetch(`https://api.thecatapi.com/v1/breeds?api_key=${API_KEY}`);
+  const response = await fetch(`https://api.thecatapi.com/v1/?breed_ids=${id}&api_key=${API_KEY}`);
   const breeds = await response.json();
   
   breeds.forEach(breed => {
+    ;
     // only create an option element if breed has images available
     if (breed.image) {
       const option = document.createElement("option");
